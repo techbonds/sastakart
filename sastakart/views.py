@@ -332,3 +332,6 @@ class ContactView(TemplateView):
 
 class AboutView(TemplateView):
 	template_name = 'text.html'
+
+class RobotsView(TemplateView):
+	template_name = "robots.txt"	

@@ -1,0 +1,3 @@
+# Currently disallowing webcrawler access to the entire website. Can be modified after the admin details are placed.
+User-agent: *
+Disallow: /

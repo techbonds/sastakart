@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^faq/$',FAQView.as_view(),name='faq'),
     url(r'^contact/$',ContactView.as_view(),name='contact'),
     url(r'^about/$',AboutView.as_view(),name='about'),    
+    url(r'^robots.txt/$',RobotsView.as_view(content_type='text/plain')),
    	)

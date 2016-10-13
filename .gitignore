@@ -1,0 +1,4 @@
+*.pyc
+*.dump
+staticfiles
+static/*

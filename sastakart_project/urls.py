@@ -7,5 +7,6 @@ from sastakart.views import *
 urlpatterns = patterns('',    
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^', include('sastakart.urls',namespace='sastakart')),
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),    
 ) 

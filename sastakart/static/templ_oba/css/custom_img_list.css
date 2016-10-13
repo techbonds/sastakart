@@ -1,0 +1,17 @@
+.img_list {
+    display: block;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    max-width: 160px;
+}
+
+/*old extra css class*/
+/*.img_list_index {
+    display: block;
+    height: 140px;
+    margin-left: 10px;
+    margin-top: 15px;
+    max-width: 160px;
+}*/

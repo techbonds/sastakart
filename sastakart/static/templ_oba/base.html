@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>
+        Sastakart
+    </title>
+
+    <meta name="keywords" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link href="/static/templ_oba/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/templ_oba/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/templ_oba/css/animate.min.css" rel="stylesheet">
+    <link href="/static/templ_oba/css/owl.carousel.css" rel="stylesheet">
+    <link href="/static/templ_oba/css/owl.theme.css" rel="stylesheet">
+    <link href="/static/templ_oba/css/custom_img_list.css" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="/static/templ_oba/css/pulse_loader.css" type="text/css">
+
+    <!-- theme stylesheet -->
+    <link href="/static/templ_oba/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- your stylesheet with modifications -->
+    <link href="/static/templ_oba/css/custom.css" rel="stylesheet">
+
+    <script src="/static/templ_oba/js/respond.min.js"></script>
+
+    <link rel="shortcut icon" href="/static/templ_oba/favicon.png">
+
+
+    
+
+
+</head>
+
+<body>
+
+<!-- new spinner -->
+<div id="loading_yolo" class="pulse-loader col-xs-offset-5 col-md-offset-6" style="display:none; position: fixed;   left: 50%;   top: 50%;  z-index: 9999; margin-top: -50px; margin-left:-50px; width:100px; height:100px"></div>
+ <div id="top_level_div">
+
+
+    <!-- *** NAVBAR ***
+ _________________________________________________________ -->
+    <!-- NAVBAR MOBILE -->
+<div class="navbar navbar-default yamm visible-xs" role="navigation" id="navbar" style="border-bottom-width: thick; border-bottom-color:#4fbfa8">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand home" id="skart_img_link" data-animate-hover="bounce" href="/">
+                   
+                    <img src="/static/templ_oba/img/logo-small.svg" alt="Sastakart logo" class="visible-xs" style="height : 65px; margin-top : -2px;"><span class="sr-only">Sastakart - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation" style="
+    font-size: 20px;
+    color: #4fbfa8;
+    border-width: 0px;
+    height: 40px;
+    width: 40px;
+    padding: 0px !important;
+    background: transparent;
+    margin-right: auto;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" style="
+    font-size: 20px;
+    color: #4fbfa8;
+    border-width: 0px;
+    height: 40px;
+    width: 40px;
+    padding: 0px !important;
+    background: transparent;
+    margin-right: auto;
+">
+                        <span class="sr-only">Toggle search</span>
+                        <i class="fa fa-search"></i>
+                    </button>
+                    
+                </div>
+            </div>
+            <!--/.navbar-header -->
+
+            <div class="navbar-collapse collapse" id="navigation">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a id="home_link" href="/">Home</a>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" id="elec_drop" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Electronics <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content" id="elec_cat">
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <h5>ACCESSORIES</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BATTERIES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CABLES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAR CHARGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAR KITS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CHARGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GPS NAVIGATION DEVICES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MEMORY CARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">POWER BANKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SMART TV</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WIRELESS SPEAKERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>APPLIANCE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AIR CONDITIONER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AIR FRYERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CHOPPERS BLENDERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ELECTRIC COOKERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EMERGENCY LIGHT</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FANS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FOOD PROCESSORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GEYSERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MICROWAVE OVEN</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">REFRIGERATORS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>AUTO</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AMPLIFIERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>CAMERA</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ADAPTERS AND CONVERTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BATTERY CHARGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BINOCULARS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAMCORDER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAMERA SCREEN PROTECTORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL CAMERA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL SLR CAMERA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FILTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FLASHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LENSES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>CARE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BP MONITORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL THERMOMETERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EPILATORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR-DRYERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR-STRAIGHTENERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR STYLERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MASSAGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NEBULIZERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SHAVERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TRIMMERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>COMPUTER</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BLUETOOTH ADAPTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CARD READER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EXTERNAL SSD</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GRAPHIC CARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">INTERNAL HARD DISKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LAPTOPS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MICROPHONES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MOTHERBOARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">RAM</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOUND CARDS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MOBILES</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MOBILE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FITNESS TRACKER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SMART WATCHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TABLET</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>OFFICE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LABEL PRINTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CRICKET BATS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                       
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" id="fash_drop" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Fashion <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content" id="fash_cat">
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <h5>BABY</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIAPER CREAMS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LOTIONS OILS & POWDERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOAPS SHAMPOO AND BODY WASH</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WIPES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>BEAUTY</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AFTER SHAVES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYE LINER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYE SHADOWS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LIP GLOSS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MASCARA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MEN PERFUMES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NAIL POLISH</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WOMEN DEOS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WOMEN PERFUMES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>HOME</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BEDROOM FURNITURE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CARPETS RUGS DECOR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLOCKS DECOR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLOTH STANDS HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DINING FURNITURE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FABRICS HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FOOD STORAGE KITCHEN HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LIGHTING</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">PAINTS HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">QUILTS BLANKETS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>KIDS</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ETHNIC WEAR KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GAMES SETS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR ACCESSORIES KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MUSICAL TOY KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">REMOTE CONTROL TOYS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SANDALS GIRLS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SCHOOL BAGS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SUNGLASSES KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TRAINS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TSHIRTS BOYS CLOTHING KIDS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MEN</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BACKPACKS BAGS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BOXERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BRIEFS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CASUAL SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYEGLASSES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FORMAL SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOCKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SPORT SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">THERMAL WEAR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WALLETS BAGS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>SPORTS</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">RAQUETS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SQUASH</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>WOMEN</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BANGLES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLUTCHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYEGLASSES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HANDBAGS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">JACKETS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">JEANS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NECKPIECE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SKIRTS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SPORTS SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WATCHES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+
+                   
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form"  action="{% url 'sastakart:searchbar' %}" role="search" method="POST">{% csrf_token %}
+                    <div class="input-group">
+                        <input type="text"  id="id_searchbar_mob" name="search_text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+            <button id="id_searchbut_mob" type="submit" class="btn btn-primary" name="search_submit" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2);"><i class="fa fa-search"></i></button>
+
+            </span>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#navbar -->
+
+    <!-- *** NAVBAR MOBILE END *** -->
+
+
+
+
+ <!-- NAVBAR NOT MOBILE -->
+    <div class="navbar navbar-default yamm hidden-xs" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand home" id="skart_img_link_nm" data-animate-hover="bounce" href="/">
+                    <img src="/static/templ_oba/img/logo.svg" alt="Sastakart logo" class="hidden-xs" style="height : 65px; margin-top : -6px;">
+                   
+                </a>
+                
+            </div>
+            <!--/.navbar-header -->
+
+            <div class="navbar-collapse collapse" id="navigation">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a id="home_link_nm" href="/">Home</a>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" id="elec_drop" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Electronics <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content" id="elec_cat_nm">
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <h5>ACCESSORIES</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BATTERIES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CABLES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAR KITS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CHARGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GPS NAVIGATION DEVICES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MEMORY CARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">POWER BANKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SMART TV</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WIRELESS SPEAKERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>APPLIANCE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AIR CONDITIONER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AIR FRYERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CHOPPERS BLENDERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ELECTRIC COOKERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FANS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FOOD PROCESSORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GEYSERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MICROWAVE OVEN</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">REFRIGERATORS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>AUTO</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AMPLIFIERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>CAMERA</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ADAPTERS AND CONVERTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BATTERY CHARGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BINOCULARS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAMCORDER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CAMERA SCREEN PROTECTORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL CAMERA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL SLR CAMERA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FLASHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LENSES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>CARE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BP MONITORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIGITAL THERMOMETERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EPILATORS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR-DRYERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR-STRAIGHTENERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MASSAGERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NEBULIZERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SHAVERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TRIMMERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>COMPUTER</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BLUETOOTH ADAPTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CARD READER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GRAPHIC CARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">INTERNAL HARD DISKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LAPTOPS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MICROPHONES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MOTHERBOARDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">RAM</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOUND CARDS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MOBILES</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MOBILE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FITNESS TRACKER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SMART WATCHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TABLET</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>OFFICE</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LABEL PRINTERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CRICKET BATS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                       
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" id="fash_drop" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Fashion <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content" id="fash_cat_nm">
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <h5>BABY</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DIAPER CREAMS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LOTIONS OILS & POWDERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOAPS SHAMPOO AND BODY WASH</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WIPES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>BEAUTY</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">AFTER SHAVES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYE LINER</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYE SHADOWS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LIP GLOSS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MASCARA</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MEN PERFUMES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NAIL POLISH</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WOMEN DEOS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WOMEN PERFUMES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>HOME</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BEDROOM FURNITURE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CARPETS RUGS DECOR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLOCKS DECOR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLOTH STANDS HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">DINING FURNITURE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FOOD STORAGE KITCHEN HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">LIGHTING</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">PAINTS HOME</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">QUILTS BLANKETS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>KIDS</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">ETHNIC WEAR KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">GAMES SETS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HAIR ACCESSORIES KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">MUSICAL TOY KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">REMOTE CONTROL TOYS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SCHOOL BAGS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SUNGLASSES KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TRAINS KIDS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TSHIRTS BOYS CLOTHING KIDS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MEN</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BACKPACKS BAGS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BOXERS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CASUAL SHIRTS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYEGLASSES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">FORMAL SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SOCKS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SPORT SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">THERMAL WEAR</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WALLETS BAGS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>SPORTS</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">RAQUETS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SQUASH</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>WOMEN</h5>
+                                            <ul>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">BANGLES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">CLUTCHES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">EYEGLASSES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">HANDBAGS</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">JACKETS WOMEN</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">JEANS WOMEN</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">NECKPIECE</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">SPORTS SHOES</a>
+                                                </li>
+                                                <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">WATCHES</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+
+                  
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+
+            
+
+                <div class="navbar-collapse collapse right" id="search-not-mobile">
+                   
+
+                <form class="navbar-form" action="{% url 'sastakart:searchbar' %}" role="search" method="POST">{% csrf_token %}
+                    
+                    
+                    <div class="input-group" style="width:25% ; right:28px; display:flex; position:absolute;">
+                        <input type="text" id="id_searchbar" name="search_text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+            <button type="submit" id="id_searchbut" class="btn btn-primary" name="search_submit"><i class="fa fa-search"></i></button>
+
+            </span>
+                    </div>
+             
+                </form>
+
+            
+            
+                </div>
+
+            
+
+           
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#navbar -->
+
+    <!-- *** NAVBAR NOT MOBILE END *** -->
+
+
+
+    <div id="all" style="padding-top: 105px;">
+            {% block content %}
+            {% endblock %}
+        <!-- *** FOOTER ***
+ _________________________________________________________ -->
+   
+             <div id="footer" data-animate="fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h4>Pages</h4>
+
+                        <ul>
+                            <li><a href="{% url "sastakart:about" %}">About us</a>
+                            </li>
+                            <li><a href="{% url "sastakart:faq" %}">FAQ</a>
+                            </li>
+                            <li><a href="{% url "sastakart:contact" %}">Contact us</a>
+                            </li>
+                        </ul>
+
+                        <hr class="visible-xs visible-sm">
+
+                    
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Top categories</h4>
+
+                        <h5>Electronics</h5>
+
+                        <ul>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Mobile</a>
+                            </li>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">TV</a>
+                            </li>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Laptop</a>
+                            </li>
+                        </ul>
+
+                        <h5>Fashion</h5>
+                        <ul>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Clutches</a>
+                            </li>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Eyeglasses</a>
+                            </li>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Neckpiece</a>
+                            </li>
+                            <li><a href="{% url 'sastakart:search' 'dummy' 1 %}" class="cat-anchor">Jeans Women</a>
+                            </li>
+                        </ul>
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Where to find us</h4>
+
+                        <p><strong>Sastakart </strong>
+                            <br>Maharaja Surajmal
+                            <br>Institute of Technology
+                            <br>C-4, Janakpuri
+                            <br>
+                            <strong>New Delhi</strong>
+                        </p>
+
+                   <!--     <a href="/static/templ_oba/contact.html">Go to contact page</a> -->
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Get the latest discounts & coupons</h4>
+
+                        <p class="text-muted">Latest discounts and coupons on Flipkart, Amazon, Paytm and Snapdeal.</p>
+
+                        <form>
+                            <div class="input-group">
+
+                                <input type="text" class="form-control">
+
+                                <span class="input-group-btn">
+
+                <button class="btn btn-default" type="button">Subscribe!</button>
+
+            </span>
+
+                            </div>
+                            <!-- /input-group -->
+                        </form>
+
+                        <hr>
+
+                        <h4>Stay in touch</h4>
+
+                        <p class="social">
+                            <a id="fb_footer" href="https://www.facebook.com/Techbonds-721596731191481/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                            <a id="twitter_footer" href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
+                            <a id="instagram_footer" href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
+                            <a id="gplus_footer" href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
+                            <a id="email_footer" href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                        </p>
+
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#footer -->
+
+        <!-- *** FOOTER END *** -->
+
+
+
+
+        <!-- *** COPYRIGHT ***
+ _________________________________________________________ -->
+        <div id="copyright">
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="text-center">© 2015 sastakart</p>
+
+                </div>
+                
+            </div>
+        </div>
+        <!-- *** COPYRIGHT END *** -->
+
+
+
+    </div>
+    <!-- /#all -->
+
+
+    
+
+    <!-- *** SCRIPTS TO INCLUDE ***
+ _________________________________________________________ -->
+    <script src="/static/templ_oba/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/templ_oba/js/bootstrap.min.js"></script>
+    <script src="/static/templ_oba/js/jquery.cookie.js"></script>
+    <script src="/static/templ_oba/js/waypoints.min.js"></script>
+    <script src="/static/templ_oba/js/modernizr.js"></script>
+    <script src="/static/templ_oba/js/bootstrap-hover-dropdown.js"></script>
+    <script src="/static/templ_oba/js/owl.carousel.min.js"></script>
+    <script src="/static/templ_oba/js/front.js"></script>
+    <script src="/static/templ_oba/js/custom_base.js"></script>
+    <script type="text/javascript" src="/static/templ_oba/js/jqeye.min.js"></script>
+    <script type="text/javascript">
+            jQuery(document).ready(function() {
+                jQuery("#pupil1").jqEye({width:12,height:12,radius:10});
+                jQuery("#pupil2").jqEye({width:12,height:12,radius:9});
+            });
+    </script>
+
+</div>
+</body>
+
+
+</html>

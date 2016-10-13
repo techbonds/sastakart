@@ -1,0 +1,510 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <div id="content">
+            <div class="container">
+
+                
+               
+                <div class="col-md-12">
+<!-- NOT MOBILE -->
+                    <div class="row hidden-xs hidden-sm" id="productMain">
+                        <div class="col-md-4 col-xs-12">
+                            <div id="mainImage" style="width: 100%; height: 400px; background: white;">
+                                <img src="{{product.image_url}}" alt="" class="img-responsive" style="max-height: 300px;
+    max-width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);">
+                            </div>
+
+                           
+
+                        </div>
+                        <div class="col-md-8 col-xs-12">
+                            <div class="box" id="rightdiv" style="height:400px;">
+                                <h1 id="{{product.id}}" class="text-center" style="width: 500px; margin-left: auto; margin-right: auto; ">
+                                    {{product.title}}</h1>
+                                
+                                <h2 class="text-center">Lowest Price</h2>
+                                <h2 class="text-center" style="color:#4fbfa8;">₹{{lowest.price}}</h2>
+                                {% if lowest.mrp != None %}
+                                <h3 class="text-center"><strike>₹{{lowest.mrp}}</strike></h3>
+                                {% endif %}
+                                <p class="text-center buttons">
+                                    <a href="{{lowest.url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i> Go to {{lowest.store}}</a> 
+                                   
+                                </p>
+                                {% if lowest.discount != None  %}
+                                <div class="ribbon sale col-md-4" style=" margin-left: -20px; ">
+                                    <div class="theribbon text-center" style="font-size: 25px;">{{lowest.discount}}% OFF</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
+
+      
+
+<!-- MOBILE -->
+
+<div class="row visible-xs visible-sm" id="productMainMobile">
+                        <div class="col-md-4 col-xs-12">
+                            <div id="mainImage" style="height: 350px; background: white;">
+                                <img src="{{product.image_url}}" alt="" class="img-responsive" style="max-height: 300px;
+    max-width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);">
+                            </div>
+
+                           
+
+                        </div>
+                        <div class="col-md-8 col-xs-12">
+                            <div class="box" style="">
+                                <h1 id="{{product.id}}" class="text-center" style="margin-left: auto; margin-right: auto; margin-top: 80px;">
+                                    {{product.title}}</h1>
+                                
+                                <h2 class="text-center">Lowest Price</h2>
+                                <h2 class="text-center" style="color:#4fbfa8;">₹{{lowest.price}}</h2>
+                                {% if lowest.mrp > 0.0 and lowest.mrp != None and lowest.mrp != 'None' %}
+                                <h3 class="text-center"><strike>₹{{lowest.mrp}}</strike></h3>
+                                {% endif %}
+                                <p class="text-center buttons">
+                                    <a href="{{lowest.url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i> Go to {{lowest.store}}</a> 
+                                   
+                                </p>
+                                {% if lowest.discount != None  %}
+                                <div class="ribbon sale" style=" margin-left: -20px; width: 100%;">
+                                    <div class="theribbon text-center" style="font-size: 25px;width: 100%;">{{lowest.discount}}% OFF</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
+
+                  
+
+                    
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+
+<!-- USER REVIEWS DESKTOP -->
+
+<div id="user_reviews" class="hidden-xs hidden-sm">
+  <div class="box" id="hot" data-animate="fadeInUp" style="padding: 0px;" >
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h2 style="font-size:20px; font-weight:normal;">Online Stores and User Reviews</h2>
+                        </div>
+                    </div>
+                    </div>
+
+<div class="container">
+    
+ <ul class="nav nav-pills" id="reviews_tab">
+                        <li role="presentation" class="active"><a id="ama_reviews" href="#amazon_reviews" data-toggle = "tab">Amazon</a></li>
+                        <li role="presentation"><a id="flip_reviews" href="#flipkart_reviews" data-toggle = "tab">Flipkart</a></li>
+                        <li role="presentation"><a id="snap_reviews" href="#snapdeal_reviews" data-toggle = "tab">Snapdeal</a></li>
+                        <li role="presentation"><a id="pay_reviews" href="#paytm_reviews" data-toggle = "tab">Paytm</a></li>
+                    </ul>
+
+                <div class="tab-content">
+                    <div class="col-md-12 box tab-pane active fade in" id="amazon_reviews" style="height:500px;">
+                        <table class="col-md-12">
+                            <tbody><tr>
+                                <td class="col-md-4"><img src="/static/templ_oba/img/amazon_store.png"></td>
+                                {% if ama_price != None %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">₹{{ama_price}}</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="{{ama_url}}" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Amazon</a> 
+                                   
+                                </p></td>
+                                {% else %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">Not available</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p></td>
+                                {% endif %}
+                            </tr>
+                        </tbody></table>
+
+
+                       <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if ama_rev|length > 0 %}
+                        {% for rev in ama_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/><div style="white-space: pre-line;">{{rev.content}}</div>
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                        
+                    </div>
+                     <div class="col-md-12 box tab-pane fade" id="flipkart_reviews" style="height:500px;">
+                        <table class="col-md-12">
+                            <tbody><tr>
+                                <td class="col-md-4"><img src="/static/templ_oba/img/flipkart_store.png"></td>
+                                {% if flip_price != None %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">₹{{flip_price}}</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="{{flip_url}}" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Flipkart</a> 
+                                   
+                                </p></td>
+                                {% else %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">Not available</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p></td>
+                                {% endif %}
+                            </tr>
+                        </tbody></table>
+
+                        <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if flip_rev|length > 0 %}
+                        {% for rev in flip_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/><div style="white-space: pre-line;">{{rev.content}}</div>
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                    </div>
+                     <div class="col-md-12 box tab-pane fade" id="snapdeal_reviews" style="height:500px;">
+                        <table class="col-md-12">
+                            <tbody><tr>
+                                <td class="col-md-4"><img src="/static/templ_oba/img/snapdeal_store.png"></td>
+                                {% if snap_price != None %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">₹{{snap_price}}</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="{{snap_url}}" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Snapdeal</a> 
+                                   
+                                </p></td>
+                                {% else %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">Not available</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p></td>
+                                {% endif %}
+                            </tr>
+                        </tbody></table>
+
+                            <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if snap_rev|length > 0 %}
+                        {% for rev in snap_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/><div style="white-space: pre-line;">{{rev.content}}</div>
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="col-md-12 box tab-pane fade" id="paytm_reviews" style="height:500px;">
+                        <table class="col-md-12">
+                            <tbody><tr>
+                                <td class="col-md-4"><img src="/static/templ_oba/img/paytm_store.png"></td>
+                                {% if pay_price != None %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">₹{{pay_price}}</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="{{pay_url}}" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Paytm</a> 
+                                   
+                                </p></td>
+                                {% else %}
+                                <td class="col-md-4 text-center" style="font-size: xx-large;">Not available</td>
+                                <td class="col-md-4 text-right"><p class="buttons">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px; margin-top:20px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p></td>
+                                {% endif %}
+                            </tr>
+                        </tbody></table>
+
+                        <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        
+                        <p style="font-size: larger;">Reviews not listed</p>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+</div>
+                    
+
+
+<!-- USER REVIEWS MOBILE -->
+
+
+<div id="user_reviews_mobile" class="visible-xs visible-sm">
+  <div class="box" id="hot" data-animate="fadeInUp" style="padding: 0px;" >
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h2 style="font-size:20px; font-weight:normal;">Online Stores and User Reviews</h2>
+                        </div>
+                    </div>
+                    </div>
+
+<div class="container">
+    
+ <ul class="nav nav-pills" id="reviews_tab">
+                        <li role="presentation" class="active"><a id="ama_reviews" href="#amazon_reviews_mobile" data-toggle = "tab">Amazon</a></li>
+                        <li role="presentation"><a id="flip_reviews" href="#flipkart_reviews_mobile" data-toggle = "tab">Flipkart</a></li>
+                        <li role="presentation"><a id="snap_reviews" href="#snapdeal_reviews_mobile" data-toggle = "tab">Snapdeal</a></li>
+                        <li role="presentation"><a id="pay_reviews" href="#paytm_reviews_mobile" data-toggle = "tab">Paytm</a></li>
+                    </ul>
+
+                <div class="tab-content">
+                    <div class="col-md-12 box tab-pane active fade in" id="amazon_reviews_mobile" style="">
+                        
+                                <p class="text-center"><img src="/static/templ_oba/img/amazon_store.png"></p>
+                                {% if ama_price != None %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">₹{{ama_price}}</p>
+                                <p class="buttons text-center">
+                                    <a href="{{ama_url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Amazon</a> 
+                                   
+                                </p>
+                                {% else %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">Not available</p>
+                                <p class="buttons text-center">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p>
+                                {% endif %}
+                           
+
+
+                       <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if ama_rev|length > 0 %}
+                        {% for rev in ama_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/>{{rev.content}}
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                        
+                    </div>
+                     <div class="col-md-12 box tab-pane fade" id="flipkart_reviews_mobile" style="">
+                        
+                                <p class="text-center"><img src="/static/templ_oba/img/flipkart_store.png"></p>
+                                {% if flip_price != None %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">₹{{flip_price}}</p>
+                                <p class="buttons text-center">
+                                    <a href="{{flip_url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Flipkart</a> 
+                                   
+                                </p>
+                                {% else %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">Not available</p>
+                                <p class="buttons text-center">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p>
+                                {% endif %}
+                            
+
+                        <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if flip_rev|length > 0 %}
+                        {% for rev in flip_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/>{{rev.content}}
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                    </div>
+                     <div class="col-md-12 box tab-pane fade" id="snapdeal_reviews_mobile" style="">
+                        
+                                <p class="text-center"><img src="/static/templ_oba/img/snapdeal_store.png"></p>
+                                {% if snap_price != None %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">₹{{snap_price}}</p>
+                                <p class="buttons text-center">
+                                    <a href="{{snap_url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Snapdeal</a> 
+                                   
+                                </p>
+                                {% else %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">Not available</p>
+                                <p class="buttons text-center">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p>
+                                {% endif %}
+                            
+
+                            <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        <div>
+                        {% if snap_rev|length > 0 %}
+                        {% for rev in snap_rev %}
+                        <text style="font-size: 20px;font-weight: bold;">{{rev.title}}</text><br/>by <text style="font-size: 15px;    color: #4fbfa8;">{{rev.reviewer}}</text> on <text style="font-size: 15px;color: #4fbfa8;">
+                        {{rev.date}}</text><br/><br/>{{rev.content}}
+                        <br/>
+                        <hr style = 'background-color:#000000; border-width:0; color:#000000; height:2px; lineheight:0; display: inline-block; text-align: left; width:100%;' ></hr>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <p style="font-size: larger;">No reviews</p>
+                        {% endif %}
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="col-md-12 box tab-pane fade" id="paytm_reviews_mobile" style="">
+                        
+                                <p class="text-center"><img src="/static/templ_oba/img/paytm_store.png"></p>
+                                {% if pay_price != None %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">₹{{pay_price}}</p>
+                                <p class="buttons text-center">
+                                    <a href="{{pay_url}}" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Go to Paytm</a> 
+                                   
+                                </p>
+                                {% else %}
+                                <p class="col-md-4 text-center" style="font-size: xx-large;">Not available</p>
+                               <p class="buttons text-center">
+                                    <a href="javascript:void(0);" class="btn btn-primary" style="font-size:15px;"><i class="fa fa-shopping-cart" style="font-size:20px;"></i>Not available</a> 
+                                   
+                                </p>
+                                {% endif %}
+                          
+                        <div class="col-md-12 box" id="details" style="margin-top: 10px;height: 360px;overflow: auto;">
+                        
+                        
+                        <p style="font-size: larger;">Reviews not listed</p>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+</div>
+                    
+
+
+
+
+
+
+
+
+
+  <!-- *** HOT PRODUCT SLIDESHOW ***
+ _________________________________________________________ -->
+            <div id="hot">
+
+                <div class="box" data-animate="fadeInUp" style="padding:0px;">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h2 style="font-size:20px; font-weight:normal;">Top Searches</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="product-slider">
+
+                        {% for product in products %}
+                        <div class="item">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="{% url "sastakart:product" epid=product.slug  %}">
+                                                <img src='{{product.image_url}}' alt="" class="img_list">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url "sastakart:product" epid=product.slug  %}" >
+                                                <img src='{{product.image_url}}' alt="" class="img_list">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{% url "sastakart:product" epid=product.slug  %}" class="invisible" >
+                                    <img src='{{product.image_url}}' alt="" class="img_list">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="{% url "sastakart:product" epid=product.slug  %}" >{{product.title}}</a></h3>
+                                    <p class="price">{{product.price}}</p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                        {% endfor %}
+
+                        
+
+                    </div>
+                    <!-- /.product-slider -->
+                </div>
+                <!-- /.container -->
+
+            </div>
+
+
+
+            
+        </div>
+        <!-- /#content -->
+{% endblock %}

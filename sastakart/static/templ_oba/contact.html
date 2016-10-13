@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a>
+                        </li>
+                        <li>Contact</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** PAGES MENU ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Pages</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url "sastakart:about" %}">About us</a>
+                            </li>
+                            <li><a href="{% url "sastakart:faq" %}">FAQ</a>
+                            </li>
+                            <li><a href="{% url "sastakart:contact" %}">Contact us</a>
+                            </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- *** PAGES MENU END *** -->
+
+
+
+                </div>
+
+                <div class="col-md-9">
+
+
+                    <div class="box" id="contact">
+                        <h1>Contact</h1>
+
+                        <p class="lead">Are you curious about something? Do you have some kind of problem with our results?</p>
+                        <p>Please feel free to contact us, we are always here for you.</p>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-map-marker"></i> Address</h3>
+                                <p><strong>Sastakart Ltd.</strong>
+                            <br>Maharaja Surajmal
+                            <br>Institute of Technology
+                            <br>C-4, Janakpuri
+                            <br>
+                            <strong>New Delhi</strong>
+                        </p>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-phone"></i> Contact number</h3>
+                                <p class="text-muted"></p>
+                                <p>
+                                    <strong>+91-9582225263</strong><br>
+                                      <strong>+91-8800669505</strong><br>
+                                        <strong>+91-9013203609</strong><br>
+                                          <strong>+91-9873483441</strong>
+
+
+
+                                </p>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-envelope"></i> Online support</h3>
+                                <p class="text-muted">Please feel free to write an email to us.</p>
+                                <p>
+                                    <strong><a href="mailto:contact.techbonds@gmail.com">contact.techbonds@gmail.com</a></strong>
+                                   
+                                </p>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                        </div>
+                        <!-- /.row -->
+
+                        <hr style="margin-top:85px;">
+
+                        <div id="map">
+
+                           
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2990040408713!2d77.0903479142703!3d28.62079939136446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afbf8ad8a1%3A0x7491865648d7aaea!2sMaharaja+Surajmal+Institute+Of+Technology!5e0!3m2!1sen!2sin!4v1449499711941" frameborder="0" style="width:100%; border:0; height:100%" allowfullscreen></iframe>
+
+                        </div>
+
+                        <hr>
+                        <h2>Contact form</h2>
+
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="firstname">Firstname</label>
+                                        <input type="text" class="form-control" id="firstname">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Lastname</label>
+                                        <input type="text" class="form-control" id="lastname">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="subject">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button>
+
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+{% endblock %}

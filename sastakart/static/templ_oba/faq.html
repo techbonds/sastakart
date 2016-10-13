@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a>
+                        </li>
+                        <li>FAQ</li>
+                    </ul>
+
+                </div>
+
+ <div class="col-md-3">
+                    <!-- *** PAGES MENU ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Pages</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url "sastakart:about" %}">About us</a>
+                            </li>
+                            <li><a href="{% url "sastakart:faq" %}">FAQ</a>
+                            </li>
+                            <li><a href="{% url "sastakart:contact" %}">Contact us</a>
+                            </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- *** PAGES MENU END *** -->
+
+
+
+                </div>
+
+                <div class="col-md-9">
+
+
+                    <div class="box" id="contact">
+                        <h1>Frequently asked questions</h1>
+
+                        <p class="lead">Are you curious about something? Do you have some kind of problem with our comparisons?</p>
+                        <p>Please feel free to contact us, we are always here for you.</p>
+
+                        <hr>
+
+                        <div class="panel-group" id="accordion">
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+
+					    <a id="faq1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+
+						1. Are the prices of products on your website actually genuine ?
+
+					    </a>
+
+					</h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Yes, the prices of the products on our websites are updated on a regular basis and you can refer to all the listed sites
+                                        if you want to confirm the prices or reviews.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+
+					    <a id="faq2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+
+						2. What is the best way of using your analytics website ?
+
+					    </a>
+
+					</h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        The best use of our website can be done if the user searches for a specific product like "Dell inspiron 15R turbo" which they want to buy on our website while they also can
+                                        search more generalized searching terms like "laptop".
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+
+					    <a id="faq3" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+
+						3. What are the different products on your website ?
+
+					    </a>
+
+					</h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Right now there are mostly electronics and fasion products on our website but more and more products will get available
+                                        as time progresses.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+
+                        </div>
+                        <!-- /.panel-group -->
+
+
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+
+        <!-- *** FOOTER *** -->
+
+        {% endblock %}

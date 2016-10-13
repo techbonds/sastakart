@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+
+
+                    <div class="box info-bar">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 products-showing">
+                                Showing <strong>{{products|length}}</strong> of <strong>{{count_num}}</strong> products
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row products">
+
+                    {% for product in products %}
+                        <div class="col-md-3 col-sm-4">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="{% url "sastakart:product" epid=product.epid  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">
+                                                <div class="img_list">
+                                                <img src="{{product.image}}" alt="" style="position: absolute; top: 60%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); max-width: 160px;    max-height: 140px;" >
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url "sastakart:product" epid=product.epid  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">
+                                                <div class="img_list">
+                                                <img src="{{product.image}}" alt="" style="position: absolute; top: 60%;    left: 50%; margin-right: -50%; transform: translate(-50%, -50%); max-width: 160px;    max-height: 140px;">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{% url "sastakart:product" epid=product.epid  %}" class="invisible" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">
+                                    <div class="img_list">
+                                    <img src="{{product.image}}" alt="" style="position: absolute; top: 60%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); max-width: 160px; max-height: 140px;">
+                                    </div>
+                                </a>
+                                <div class="text">
+                                    <h3><a href="{% url "sastakart:product" epid=product.epid  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">{{product.title}}</a></h3>
+                                    {% if product.price != 0 %}
+                                    <p class="price" style="color: #555555; font-weight: normal;font-size: 25px;">
+                                        ₹{{product.price}}</p>
+                                    {% else %}
+                                    <p class="price" style="color: #555555; font-weight: normal;font-size: 25px;">NA</p>
+                                    {% endif %}
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+                       {% endfor %} 
+
+                    </div>
+                    <!-- /.products -->
+
+                    <div class="pages">
+
+                       
+                        <ul class="pagination">
+                            {% if page > 1 %}
+                            <li>
+                            <a href="{% url "sastakart:search" keyword=keyword page=1  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">&laquo;</a>
+                            </li>
+                            <li>
+                            <a href="{% url "sastakart:search" keyword=keyword page=page|add:"-1"  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">&lt;</a>
+                            </li>
+
+                            {% endif %}
+
+
+
+                            {% for i in arr_num_p %}
+                            {% if i == page %}
+                            <li class="active"><a href="javascript:void(0);">{{i}}</a>
+                            </li>
+                            {% else %}
+                            <li><a href="{% url "sastakart:search" keyword=keyword page=i  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">{{i}}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+
+
+
+                            {% if page < count_p %}
+                            <li>
+                            <a href="{% url "sastakart:search" keyword=keyword page=page|add:"1"  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">&gt;</a>
+                            </li>
+                            <li>
+                            <a href="{% url "sastakart:search" keyword=keyword page=count_p  %}" onclick="$('#loading_yolo').show(100); $('#top_level_div').fadeTo(0, 0.2); $('html').css('overflow', 'hidden'); ">&raquo;</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a>
+                        </li>
+                        <li>About page</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** PAGES MENU ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Pages</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url "sastakart:about" %}">About us</a>
+                            </li>
+                            <li><a href="{% url "sastakart:faq" %}">FAQ</a>
+                            </li>
+                            <li><a href="{% url "sastakart:contact" %}">Contact us</a>
+                            </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- *** PAGES MENU END *** -->
+
+
+                </div>
+
+                <div class="col-md-9">
+
+                    <div id="hot">
+
+                       <div class="box" data-animate="fadeInUp" style="padding:0px;">
+                    
+                        <div>
+                            <h2 style="font-size:20px; font-weight:normal;">Our Team</h2>
+                        </div>
+                    
+                        </div>
+                    </div>
+                        <div class="row box" style="background: white;">
+                        <div style="margin-top:10px">
+                            <div class="col-md-6 centred">
+                                <p class="text-center">
+                                    <img src="/static/templ_oba/img/verma.jpg" class="img-circle img-responsive" alt="" style="height:200px;width:200px;margin-left: auto;margin-right: auto;float: none;">
+                                <p class="text-center ">
+                                <b>
+                                SIDDHANT VERMA
+                                </b></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-center">
+                                    <img src="/static/templ_oba/img/sokhey.jpg" class="img-circle img-responsive" alt="" style="height:200px;width:200px;margin-left: auto;margin-right: auto;float: none;">
+                                </p>
+                                <p class="text-center">
+                                <b>SANCHIT SOKHEY
+                                </b></p>
+
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-center">
+                                    <img src="/static/templ_oba/img/dubey.jpg" class="img-circle img-responsive" alt="" style="height:200px;width:200px;margin-left: auto;margin-right: auto;float: none;">
+                                </p>
+                                <p class="text-center">
+                                <b>SHASHAANK DUBEY
+                                </b></p>
+
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-center">
+                                    <img src="/static/templ_oba/img/jain.jpg" class="img-circle img-responsive" alt="" style="height:200px;width:200px;margin-left: auto;margin-right: auto;float: none;">
+                                </p>
+                                <p class="text-center">
+                                <b>SANCHIT JAIN
+                                </b></p>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+{% endblock %}

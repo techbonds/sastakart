@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+        <div id="content">
+
+            <div class="container">
+                <div class="col-md-12 ">
+                    <div id="main-slider" style="padding-bottom:15px; background:white">
+                        <div class="item">
+                            <a href='{% url "sastakart:product" "samsung-galaxy-s6-edge-plus" %}' >
+                            <img src="/static/templ_oba/img/main-slider1.jpg" alt="" class="img-responsive" >
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href='{% url "sastakart:search" "apple+ipad" 1 %}' >
+                            <img class="img-responsive" src="/static/templ_oba/img/main-slider2.jpg" alt="" >
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href='{% url "sastakart:product" "samsung-galaxy-note-5" %}' >
+                            <img class="img-responsive" src="/static/templ_oba/img/main-slider3.jpg" alt="" >
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href='{% url "sastakart:search" "apple+iphone+6" 1 %}' >
+                            <img class="img-responsive" src="/static/templ_oba/img/main-slider4.jpg" alt="" >
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /#main-slider -->
+                </div>
+            </div>
+            <div id="homepage_yes"/>
+
+                       <!-- *** ADVANTAGES HOMEPAGE ***
+ _________________________________________________________ -->
+            <div id="advantages">
+
+                <div class="container">
+                    <div class="same-height-row">
+                        <div class="col-sm-4">
+                            <div class="box same-height ">
+                                <div class="icon"><i class="fa fa-heart"></i>
+                                </div>
+
+                                <h3 style="color:#4fbfa8">We love our users</h3>
+                                <p>We are known to provide best possible service ever. Ask anyone.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="box same-height ">
+                                <div class="icon"><i class="fa fa-tags"></i>
+                                </div>
+
+                                <h3 style="color:#4fbfa8">Best prices</h3>
+                                <p>We update the prices regularly so you don't have to pay more for what you buy.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="box same-height ">
+                                <div class="icon"><i class="fa fa-thumbs-up"></i>
+                                </div>
+
+                                <h3 style="color:#4fbfa8">Best user experience</h3>
+                                <p>We provide a clutter-free easy to use minimal UI for your ease.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /#advantages -->
+
+            <!-- *** ADVANTAGES END *** -->
+           
+            <!-- *** HOT PRODUCT SLIDESHOW ***
+ _________________________________________________________ -->
+            <div id="hot">
+
+                <div class="box" data-animate="fadeInUp" style="padding:0px;">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h2 style="font-size:20px; font-weight:normal;">Top Searches</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="product-slider">
+
+                        {% for product in products %}
+                        <div class="item">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="{% url "sastakart:product" epid=product.slug  %}">
+                                                <img src='{{product.image_url}}' alt="" class="img_list">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url "sastakart:product" epid=product.slug  %}" >
+                                                <img src='{{product.image_url}}' alt="" class="img_list">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{% url "sastakart:product" epid=product.slug  %}" class="invisible" >
+                                    <img src='{{product.image_url}}' alt="" class="img_list">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="{% url "sastakart:product" epid=product.slug  %}" >{{product.title}}</a></h3>
+                                    <p class="price">{{product.price}}</p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                        {% endfor %}
+
+                        
+
+                    </div>
+                    <!-- /.product-slider -->
+                </div>
+                <!-- /.container -->
+
+            </div>
+           
+
+
+        <!-- /#content -->
+{% endblock %}

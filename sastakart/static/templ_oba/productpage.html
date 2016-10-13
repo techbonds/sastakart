@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<style>
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+</style>
+</head>
+
+<body style='background-color:white'>
+
+<p>{{product.title}}</p>
+<p><img src='{{product.image_url}}' alt='HTML5 Icon' /></p>
+<p>{{product.rating}}</p>
+<p>{{product.no_of_ratings}}</p>
+<p>{{product.model}}</p>
+<p>{{product.brand}}</p>
+<p>{{product.msp_id}}</p>
+<p>{{product.category}}</p>
+<p>{{product.slug}}</p>
+{% for listing in listings %}
+<p> <a href='{{listing.store_url}}'>{{ listing.store }}</a> :  {{ listing.price }}</p>
+{% endfor %}
+</body>
+</html>

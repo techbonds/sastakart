@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<style>
+tr{
+height:200px;
+}
+td{
+width:200px;
+}
+</style>
+</head>
+
+<body style='background-color:white'>
+<p align='center'>{% if page > 1 %}<a href='{% url "sastakart:search" keyword=keyword page=page|add:"-1"  %}' >&lsaquo; Previous Page</a>&nbsp;&nbsp;&nbsp;&nbsp;{% endif %} {% if page < count_p %}<a href='{% url "sastakart:search" keyword=keyword page=page|add:"1"  %}'>Next Page &rsaquo;</a>{% endif %}</p>
+<table style="width:100%">
+
+{% if products|length > 0 %}
+{% for product in products %}
+	{% if forloop.counter|divisibleby:forloop.counter|add:-1 %}
+  <tr>
+  	{% endif %}
+  	
+    <td class='abc'>
+    <img src='{{product.image}}' alt='HTML5 Icon' style='height:200px;width:200px;'/>
+    <h4>
+    <a href='{% url "sastakart:product" epid=product.epid  %}'>{{product.title}}</a>
+    </h4>
+    <h4>{{product.id}}</h4>
+    {% if product.price != 0 %}
+    <h4>{{product.price}}</h4>
+    {% else %}
+    <h4>NA</h4>
+    {% endif %}
+    </td>
+   {% if forloop.counter|divisibleby:3 %}  
+</tr>
+{% endif %}
+{% endfor %}
+{% else %}
+<p> No Results available </p>
+{% endif %}
+    
+
+</table>
+
+</body>
+</html>

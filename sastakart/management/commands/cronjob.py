@@ -93,6 +93,13 @@ class Command(BaseCommand):
 		msg['Date']=formatdate(localtime=True)
 		msg.attach(MIMEText(text))
 
+		with open(attach, "rb") as fil:
+			msg.attach(MIMEApplication(
+				fil.read(),
+				Content_Disposition='attachment; filename="%s"' % basename(attach),
+				Name=basename(attach)
+			))
+
 		server = smtplib.SMTP_SSL(server,465)
 		server.login(login,password)
 		server.sendmail(send_from, send_to, msg.as_string())

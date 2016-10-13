@@ -12,7 +12,7 @@ def amazon_reviews(asin):
 	reviews = []
 	try:
 		raw = soup.find(id="cm_cr-review_list")
-		lst = raw.find_all("div",{"class":"a-section reviw"})
+		lst = raw.find_all("div",{"class":"a-section review"})
 		
 		for i in range(0,5):
 			try:

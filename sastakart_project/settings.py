@@ -15,10 +15,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+GRAPELLI_ADMIN_TITLE="Sastakart Admin"
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -28,6 +28,9 @@ class Category(MPTTModel):
 	def __unicode__(self):
 		return self.name
 
+	class Meta:
+		verbose_name_plural = 'categories'	
+
 	class MPTTMeta:
 		order_insertion_by = ['name']
 

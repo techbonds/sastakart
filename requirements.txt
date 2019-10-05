@@ -9,7 +9,7 @@ django-mptt-admin==0.3.0
 gunicorn==19.3.0
 lxml==3.4.4
 psycopg2==2.6.1
-requests==2.8.1
+requests==2.20.0
 schedule==0.3.2
 six==1.10.0
 static3==0.6.1
